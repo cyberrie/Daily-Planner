@@ -17,6 +17,29 @@ const textInputArea = $(".textInput");
 let currentHour = parseInt(moment().format("H"));
 console.log(currentHour);
 
+// textArea elements
+let hourly9El = $("#9");
+let hourly10El = $("#10");
+let hourly11El = $("#11");
+let hourly12El = $("#12");
+let hourly13El = $("#13");
+let hourly14El = $("#14");
+let hourly15El = $("#15");
+let hourly16El = $("#16");
+let hourly17El = $("#17");
+
+// Array of textInputAreas
+let hourlySlots = [
+  hourly9El,
+  hourly10El,
+  hourly11El,
+  hourly12El,
+  hourly13El,
+  hourly14El,
+  hourly15El,
+  hourly16El,
+  hourly17El,
+];
 // if past color textarea gray
 // if current, textarea red color (within next hour)
 // if future, textarea green color
