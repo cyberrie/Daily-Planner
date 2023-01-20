@@ -1,15 +1,10 @@
 // Display curent date and time in header
-
 setInterval(function () {
   let currentDateTime = moment();
   $("#current-date-time").text(
-    currentDateTime.format("dddd, MMMM Do hh:mm:ss ")
+    currentDateTime.format("dddd, MMMM Do H:mm:ss ")
   );
 }, 1000);
-
-// Timeblock Grid
-
-// current time
 
 // textArea elements
 let hourly9El = $("#9");
@@ -35,6 +30,7 @@ let hourlySlots = [
   hourly17El,
 ];
 
+// Set the colors depending on the hour
 function checkForColors() {
   // current hour to check against
   let currentHour = parseInt(moment().format("kk"));
@@ -60,7 +56,27 @@ function checkForColors() {
 checkForColors();
 
 // allow user to enter and event when they click timeblock
+let textInputArea = $("textarea");
+function insertText() {
+  let text = "";
+  // check if textarea is currently focussed
+  if (document.activeElement === textInputArea) {
+    // if yes, insert the text at the cursor position
 
-$("textarea").on("click", function () {});
+    let start = textInputArea.selectionStart;
+    let end = textInputArea.selectionEnd;
+    textInputArea.value =
+      textInputArea.value.substring(0, start) +
+      text +
+      textInputArea.value.substring(end, textInputArea.value.length);
+  } else {
+    // If it's not focused, append the text to the end
+    textInputArea.value += text;
+  }
+}
+
+textInputArea.on("click", insertText);
+
 //save the event in local storage when save button is clicked in that timeblock
+$(".saveBtn").on("click", function () {});
 // persist events between refreshes of a page
