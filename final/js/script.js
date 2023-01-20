@@ -11,12 +11,6 @@ setInterval(function () {
 
 // current time
 
-// target textarea for color-change
-const textInputArea = $(".textInput");
-// current hour to check against
-let currentHour = parseInt(moment().format("H"));
-console.log(currentHour);
-
 // textArea elements
 let hourly9El = $("#9");
 let hourly10El = $("#10");
@@ -40,9 +34,30 @@ let hourlySlots = [
   hourly16El,
   hourly17El,
 ];
-// if past color textarea gray
-// if current, textarea red color (within next hour)
-// if future, textarea green color
+
+function checkForColors() {
+  // current hour to check against
+  let currentHour = parseInt(moment().format("kk"));
+  console.log(currentHour);
+
+  // loop through the array to check for colors, add classes accordingly
+  for (let i = 0; i < hourlySlots.length; i++) {
+    hourlySlots[i].removeClass("current past present");
+
+    // if past color textarea gray
+    if (currentHour > hourlySlots[i].data("hour")) {
+      hourlySlots[i].addClass("past");
+      // if current, textarea red color
+    } else if (currentHour === hourlySlots[i].attr("data-hour")) {
+      hourlySlots[i].addClass("present");
+    } else {
+      // if future, textarea green color
+      hourlySlots[i].addClass("future");
+    }
+  }
+}
+
+checkForColors();
 
 // allow user to enter and event when they click timeblock
 
