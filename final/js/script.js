@@ -78,5 +78,11 @@ function insertText() {
 textInputArea.on("click", insertText);
 
 //save the event in local storage when save button is clicked in that timeblock
-$(".saveBtn").on("click", function () {});
+let saveSubmitBtn = $(".saveBtn");
+saveSubmitBtn.on("click", saveToLocalStorage);
+
+function saveToLocalStorage() {
+  localStorage.setItem("textarea", hourly9El.val());
+  console.log(hourly9El.val());
+}
 // persist events between refreshes of a page
