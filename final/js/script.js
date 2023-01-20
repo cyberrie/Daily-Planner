@@ -86,11 +86,12 @@ function submitAndSave(event) {
 
   let btnClicked = $(event.currentTarget);
   console.log(btnClicked.data("hour"));
-  console.log(btnClicked.parent().siblings("textarea").val());
 
-  let targetTimeBlock = textInputArea.data("hour");
-  console.log(targetTimeBlock);
+  let savedText = btnClicked.parent().siblings("textarea").val();
+  console.log(savedText);
 
-  localStorage.setItem("Time Block " + targetTimeBlock, textInputArea.val());
+  let savedTimeBlock = btnClicked.data("hour");
+
+  localStorage.setItem("Hourly Slot: " + savedTimeBlock, savedText);
 }
 // persist events between refreshes of a page
