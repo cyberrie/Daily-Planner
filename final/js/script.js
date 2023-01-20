@@ -12,9 +12,10 @@ setInterval(function () {
 // current time
 
 // target textarea for color-change
-const textInputArea = $(".textarea");
+const textInputArea = $(".textInput");
 // current hour to check against
 let currentHour = parseInt(moment().format("H"));
+console.log(currentHour);
 
 // if past color textarea gray
 // if current, textarea red color (within next hour)
