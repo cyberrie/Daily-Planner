@@ -36,7 +36,6 @@ function checkForColors() {
   let currentHour = parseInt(moment().format("kk"));
   console.log(currentHour);
 
-  currentHour = "11";
   // loop through the array to check for colors, add classes accordingly
   for (let i = 0; i < hourlySlots.length; i++) {
     hourlySlots[i].removeClass("current past present");
@@ -44,8 +43,9 @@ function checkForColors() {
     // if past color textarea gray
     if (currentHour > hourlySlots[i].data("hour")) {
       hourlySlots[i].addClass("past");
+
       // if current, textarea red color
-    } else if (currentHour == hourlySlots[i].data("hour")) {
+    } else if (currentHour === hourlySlots[i].data("hour")) {
       hourlySlots[i].addClass("present");
     } else {
       // if future, textarea green color
