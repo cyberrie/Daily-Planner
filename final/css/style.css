@@ -21,6 +21,9 @@ textarea {
   border-bottom: 10px solid black;
 }
 
+.container {
+  margin-bottom: 2rem;
+}
 .description {
   white-space: pre-wrap;
 }
@@ -43,7 +46,7 @@ textarea {
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: #878787;
   color: white;
 }
 
