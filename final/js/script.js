@@ -94,4 +94,5 @@ function submitAndSave(event) {
 
   localStorage.setItem("Hourly Slot: " + savedTimeBlock, savedText);
 }
+
 // persist events between refreshes of a page
