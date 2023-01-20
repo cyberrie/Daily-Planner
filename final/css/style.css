@@ -61,16 +61,25 @@ textarea {
 }
 
 .saveBtn {
-  background-color: #06afd5ad;
+  background-color: #06afd548;
   color: white;
   height: 100%;
   width: 100%;
   padding: 0 !important;
   border: none;
+  border-radius: 0 10px 10px 0;
+  color: rgb(35, 32, 32);
 }
 
 div {
   padding: 0 !important;
+}
+
+.time-div {
+  background-color: rgba(211, 162, 178, 0.214);
+  border-radius: 10px 0 0 10px;
+  color: rgb(35, 32, 32);
+  font-weight: bold;
 }
 
 i {
