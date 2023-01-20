@@ -8,6 +8,13 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
+    <!-- Bootstrap 5.3 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
@@ -18,7 +25,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../final/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -26,13 +33,68 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <h2 id="current-date-time"></h2>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container" id="timeblock-grid">
       <!-- Timeblocks go here -->
+      <div class="row" id="timeblock1">
+        <div class="col-lg-2">9AM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
+
+      <div class="row" id="timeblock2">
+        <div class="col-lg-2">10AM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
+
+      <div class="row" id="timeblock3">
+        <div class="col-lg-2">11AM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
+
+      <div class="row" id="timeblock4">
+        <div class="col-lg-2">12PM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
+
+      <div class="row" id="timeblock5">
+        <div class="col-lg-2">1PM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
+
+      <div class="row" id="timeblock6">
+        <div class="col-lg-2">2PM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
+
+      <div class="row" id="timeblock7">
+        <div class="col-lg-2">3PM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
+
+      <div class="row" id="timeblock8">
+        <div class="col-lg-2">4PM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
+
+      <div class="row" id="timeblock9">
+        <div class="col-lg-2">5PM</div>
+        <div class="col-lg-9">Column</div>
+        <div class="col-lg-1">Column</div>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="../final/js/script.js"></script>
   </body>
 </html>
