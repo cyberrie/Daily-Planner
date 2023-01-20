@@ -48,7 +48,7 @@ function checkForColors() {
     if (currentHour > hourlySlots[i].data("hour")) {
       hourlySlots[i].addClass("past");
       // if current, textarea red color
-    } else if (currentHour === hourlySlots[i].attr("data-hour")) {
+    } else if (currentHour === hourlySlots[i].data("hour")) {
       hourlySlots[i].addClass("present");
     } else {
       // if future, textarea green color
