@@ -36,6 +36,7 @@ function checkForColors() {
   let currentHour = parseInt(moment().format("kk"));
   console.log(currentHour);
 
+  currentHour = "11";
   // loop through the array to check for colors, add classes accordingly
   for (let i = 0; i < hourlySlots.length; i++) {
     hourlySlots[i].removeClass("current past present");
@@ -44,7 +45,7 @@ function checkForColors() {
     if (currentHour > hourlySlots[i].data("hour")) {
       hourlySlots[i].addClass("past");
       // if current, textarea red color
-    } else if (currentHour === hourlySlots[i].data("hour")) {
+    } else if (currentHour == hourlySlots[i].data("hour")) {
       hourlySlots[i].addClass("present");
     } else {
       // if future, textarea green color
@@ -54,28 +55,6 @@ function checkForColors() {
 }
 
 checkForColors();
-
-// allow user to enter and event when they click timeblock
-let textInputArea = $("textarea");
-function insertText() {
-  let text = "";
-  // check if textarea is currently focussed
-  if (document.activeElement === textInputArea) {
-    // if yes, insert the text at the cursor position
-
-    let start = textInputArea.selectionStart;
-    let end = textInputArea.selectionEnd;
-    textInputArea.value =
-      textInputArea.value.substring(0, start) +
-      text +
-      textInputArea.value.substring(end, textInputArea.value.length);
-  } else {
-    // If it's not focused, append the text to the end
-    textInputArea.value += text;
-  }
-}
-
-textInputArea.on("click", insertText);
 
 //Save the event in local storage when save button is clicked in that timeblock
 let saveSubmitBtn = $("button");
