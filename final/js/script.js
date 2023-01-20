@@ -78,11 +78,19 @@ function insertText() {
 textInputArea.on("click", insertText);
 
 //save the event in local storage when save button is clicked in that timeblock
-let saveSubmitBtn = $(".saveBtn");
-saveSubmitBtn.on("click", saveToLocalStorage);
+let saveSubmitBtn = $("button");
+saveSubmitBtn.on("click", submitAndSave);
 
-function saveToLocalStorage() {
-  localStorage.setItem("textarea", hourly9El.val());
-  console.log(hourly9El.val());
+function submitAndSave(event) {
+  event.preventDefault();
+
+  let btnClicked = $(event.currentTarget);
+  console.log(btnClicked.data("hour"));
+  console.log(btnClicked.parent().siblings("textarea").val());
+
+  let targetTimeBlock = textInputArea.data("hour");
+  console.log(targetTimeBlock);
+
+  localStorage.setItem("Time Block " + targetTimeBlock, textInputArea.val());
 }
 // persist events between refreshes of a page
