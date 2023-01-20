@@ -77,7 +77,7 @@ function insertText() {
 
 textInputArea.on("click", insertText);
 
-//save the event in local storage when save button is clicked in that timeblock
+//Save the event in local storage when save button is clicked in that timeblock
 let saveSubmitBtn = $("button");
 saveSubmitBtn.on("click", submitAndSave);
 
@@ -95,4 +95,11 @@ function submitAndSave(event) {
   localStorage.setItem("Hourly Slot: " + savedTimeBlock, savedText);
 }
 
-// persist events between refreshes of a page
+// Persist events between refreshes of a page
+function displayLastInput() {
+  for (let el of hourlySlots) {
+    el.val(localStorage.getItem("Hourly Slot: " + el.data("hour")));
+  }
+}
+
+displayLastInput();
