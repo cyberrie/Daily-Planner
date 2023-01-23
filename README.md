@@ -43,7 +43,7 @@ The app functionality:
 
 The following animation demonstrates the application functionality:
 
-![Animation of Daily Planner App]()
+![Animation of Daily Planner App](./images/daily-planner.gif)
 
 ## Links
 
